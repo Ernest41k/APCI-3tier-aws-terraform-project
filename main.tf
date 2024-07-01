@@ -46,3 +46,16 @@ module "route53" {
   alb_dns_name = module.alb.alb_dns_name
   alb_zone_id = module.alb.alb_zone_id
 }
+
+module "rds" {
+  source = "./rds"
+  tags = local.project_tags
+  vpc_cidr_block = var.vpc_cidr_block
+  username = var.username
+  password = var.password
+  engine_version = var.engine_version
+  vpc_id = module.vpc.vpc_id
+  instance_class = var.instance_class
+  private_subnet_3 = module.vpc.private_subnet_3
+  private_subnet_4 = module.vpc.private_subnet_4
+}

@@ -43,7 +43,21 @@ variable "dns_name" {
     type = string
 }
 
+variable "username" { # db username
+  type = string
+}
 
+variable "password" { # db password
+  type = string
+}
+
+variable "engine_version" { # db engine version
+    type = string
+}
+
+variable "instance_class" { # database instance type
+    type = string
+}
 
 # variable "public_subnet_1" {
 #     type = string
